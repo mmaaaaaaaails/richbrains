@@ -1,0 +1,36 @@
+@import "mixin";
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, 'sans-serif';
+  background-color: $fill;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 120px;
+}
+
+.header__title {
+  font-family: Playfair Display, 'sans-serif';
+  @include text(400, 30px, 46px, $dark);
+  margin-bottom: 30px;
+}
+
+.main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.rotate {
+  transform: rotate(90deg);
+  transition: .2s all ease-in-out;
+}
+

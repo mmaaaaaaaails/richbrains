@@ -1,0 +1,80 @@
+@import "mixin";
+@import "variables";
+
+.careers {
+
+  &__wrapper {
+    @include background;
+    padding: 30px 15px;
+    border-radius: 2px;
+    min-width: 286px;
+    height: min-content;
+    margin-right: 14px;
+  }
+
+  &__desktop {
+    &--title {
+      @include text(400, 13px, 20px, $main);
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+
+  &__mobile {
+    display: none;
+  }
+
+  &__line {
+    border: 1px solid #ECECEC;
+    margin: 20px 0;
+  }
+
+  &__block {
+    margin-bottom: 34px;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+  }
+
+  &__categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    @include text(bold, 16px, 22px, $dark);
+  }
+
+  &__lists {
+    transition: .2s all ease-in-out;
+    list-style: none;
+    display: none;
+
+    & li {
+      @include text(400, 16px, 22px, $dark);
+      margin-bottom: 14px;
+      padding: 12px;
+
+      &:hover {
+        background: $gray-light;
+        border-radius: 3px;
+        transition: .2s all ease-in-out;
+      }
+
+      &:active {
+        background-color: #deefda;
+        color: $main;
+      }
+    }
+  }
+}
+
+.active {
+  color: $main;
+}
+
+.hide {
+  display: block;
+}

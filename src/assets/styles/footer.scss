@@ -1,0 +1,15 @@
+@import "mixin";
+@import "variables";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 50px;
+
+  &__text {
+    @include text(700, 14px, 16px, $dark);
+    text-align: center;
+    margin-right: 10px;
+  }
+}
