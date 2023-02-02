@@ -315,6 +315,7 @@ svg path {
   }
   .main {
     justify-content: center;
+    align-items: inherit;
   }
   .card {
     grid-template-columns: 1fr 1fr;
