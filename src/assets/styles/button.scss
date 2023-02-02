@@ -36,7 +36,7 @@
   &__careers {
     @include text(bold, 14px, 16px, $main);
     background: $light;
-    border: 1px solid #e3f1df;
+    border: 1px solid $gray-light;
   }
 }
 

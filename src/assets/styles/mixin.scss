@@ -11,3 +11,8 @@
   background: $light;
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.06);
 }
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+}

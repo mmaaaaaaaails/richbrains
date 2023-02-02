@@ -13,8 +13,6 @@
     transition: 1s all ease-in-out;
     min-width: 282px;
     min-height: 405px;
-    box-sizing: border-box;
-
     &.flip {
       transform: translateX(-100%) rotateY(-180deg);
     }

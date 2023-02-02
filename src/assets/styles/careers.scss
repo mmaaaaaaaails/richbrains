@@ -1,5 +1,5 @@
-@import "mixin";
-@import "variables";
+@import 'mixin';
+@import 'variables';
 
 .careers {
 
@@ -26,55 +26,84 @@
   }
 
   &__line {
-    border: 1px solid #ECECEC;
+    border: 1px solid $line;
     margin: 20px 0;
   }
 
-  &__block {
-    margin-bottom: 34px;
-    cursor: pointer;
-    transition: .2s all ease-in-out;
-  }
+  &__accordion {
+    overflow: hidden;
+    margin-bottom: 20px;
 
-  &__categories {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+    &--input {
+      position: absolute;
+      display: none;
+      z-index: -1;
+    }
 
-  &__item {
-    @include text(bold, 16px, 22px, $dark);
-  }
+    &--label {
+      @include text(bold, 16px, 22px, $dark);
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 10px;
 
-  &__lists {
-    transition: .2s all ease-in-out;
-    list-style: none;
-    display: none;
-
-    & li {
-      @include text(400, 16px, 22px, $dark);
-      margin-bottom: 14px;
-      padding: 12px;
-
-      &:hover {
-        background: $gray-light;
-        border-radius: 3px;
-        transition: .2s all ease-in-out;
+      &:last-child {
+        margin-bottom: 0;
       }
 
-      &:active {
-        background-color: #deefda;
-        color: $main;
+      & span {
+        display: block;
+      }
+
+      &::after {
+        position: absolute;
+        content: "\276F";
+        width: 10px;
+        height: 10px;
+        right: 3px;
+        color: $dark;
+        font-weight: 400;
+        transition: all .2s ease-in-out;
+      }
+    }
+    &--content {
+      max-height: 0;
+      transition: all .2s ease-in-out;
+      list-style: none;
+
+      & li {
+        @include text(400, 14px, 22px, $dark);
+        padding: 12px;
+        cursor: pointer;
+
+        &:hover {
+          background: $gray-light;
+          border-radius: 3px;
+          transition: .2s all ease-in-out;
+        }
+
+        &.active {
+          background-color: $active;
+          color: $main;
+        }
       }
     }
   }
 }
 
-.active {
-  color: $main;
+.careers__accordion--input:checked {
+  + .careers__accordion--label {
+    align-items: center;
+    color: $main;
+    &::after {
+      transform: rotate(90deg);
+      color: $main;
+    }
+  }
+  ~ .careers__accordion--content {
+    max-height: 100vh;
+  }
 }
 
-.hide {
-  display: block;
-}
+

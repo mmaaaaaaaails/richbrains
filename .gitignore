@@ -3,6 +3,6 @@ dist/
 .vscode/
 package-lock.json
 
-idea
+.idea
 .css
 css.map

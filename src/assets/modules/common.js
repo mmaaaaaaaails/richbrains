@@ -15,3 +15,13 @@ careersMobile.addEventListener('click', () => {
     careersTopArrow.classList.toggle('rotate');
 })
 
+const careersAccordionContent = document.querySelectorAll('.careers__accordion--content li')
+
+careersAccordionContent.forEach((e) => {
+    e.addEventListener('click', () => {
+        careersAccordionContent.forEach((event) => {
+            event.classList.remove('active')
+        })
+        e.classList.add('active');
+    })
+})

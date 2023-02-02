@@ -1,7 +1,7 @@
 @import "mixin";
 @import "variables";
 
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .wrapper {
     padding: 60px;
   }
@@ -87,8 +87,7 @@
     }
 
     &__mobile {
-      display: flex;
-      justify-content: space-between;
+      @include flexBetween;
       align-items: center;
       padding: 16px;
       background: #F1F1F1;
@@ -128,8 +127,7 @@
     }
 
     &__top {
-      display: flex;
-      justify-content: space-between;
+      @include flexBetween;
 
       &--svg {
         display: block;
@@ -189,4 +187,17 @@
   .footer {
     display: none;
   }
+}
+
+@media (max-width: 350px) {
+    .card {
+      &__name {
+        font-size: 12px;
+      }
+
+      &__cross {
+        right: 10px;
+        top: 10px;
+      }
+    }
 }
